@@ -90,7 +90,12 @@ def fix_maze(target, maze):
     if path == target:
       break
     path_set = frozenset(path)
-    print(len(target_set - path_set), len(path_set - target_set), score_path(target, maze), score_path(path, maze))
+    # print(
+    #   len(target_set - path_set),
+    #   len(path_set - target_set),
+    #   score_path(target, maze),
+    #   score_path(path, maze)
+    # )
     bad_targets = [(p in path_set, -maze[p[1]][p[0]], p) for p in target_set]
     heapq.heapify(bad_targets)
     bad_paths = [(p in target_set, maze[p[1]][p[0]], p) for p in path_set]
